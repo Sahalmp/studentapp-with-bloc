@@ -10,4 +10,7 @@ class HomeEvent with _$HomeEvent {
       {required StudentModel model, required int index}) = EditStudent;
   const factory HomeEvent.getallstudents() = Getallstudents;
   const factory HomeEvent.getimage({image}) = GetImage;
+  const factory HomeEvent.getgender({gender}) = Getgender;
+    const factory HomeEvent.getclass({standard}) = Getstandard;
+
 }

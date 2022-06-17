@@ -24,6 +24,8 @@ mixin _$HomeEvent {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$HomeEvent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$HomeEvent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +61,8 @@ mixin _$HomeEvent {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +73,8 @@ mixin _$HomeEvent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +85,8 @@ mixin _$HomeEvent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +153,8 @@ class _$Initialize implements Initialize {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return initialize();
   }
@@ -154,6 +168,8 @@ class _$Initialize implements Initialize {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return initialize?.call();
   }
@@ -167,6 +183,8 @@ class _$Initialize implements Initialize {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -184,6 +202,8 @@ class _$Initialize implements Initialize {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return initialize(this);
   }
@@ -197,6 +217,8 @@ class _$Initialize implements Initialize {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return initialize?.call(this);
   }
@@ -210,6 +232,8 @@ class _$Initialize implements Initialize {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -293,6 +317,8 @@ class _$AddStudent implements AddStudent {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return addStudent(model);
   }
@@ -306,6 +332,8 @@ class _$AddStudent implements AddStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return addStudent?.call(model);
   }
@@ -319,6 +347,8 @@ class _$AddStudent implements AddStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (addStudent != null) {
@@ -336,6 +366,8 @@ class _$AddStudent implements AddStudent {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return addStudent(this);
   }
@@ -349,6 +381,8 @@ class _$AddStudent implements AddStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return addStudent?.call(this);
   }
@@ -362,6 +396,8 @@ class _$AddStudent implements AddStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (addStudent != null) {
@@ -450,6 +486,8 @@ class _$DeleteStudent implements DeleteStudent {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return deleteStudent(index);
   }
@@ -463,6 +501,8 @@ class _$DeleteStudent implements DeleteStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return deleteStudent?.call(index);
   }
@@ -476,6 +516,8 @@ class _$DeleteStudent implements DeleteStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (deleteStudent != null) {
@@ -493,6 +535,8 @@ class _$DeleteStudent implements DeleteStudent {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return deleteStudent(this);
   }
@@ -506,6 +550,8 @@ class _$DeleteStudent implements DeleteStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return deleteStudent?.call(this);
   }
@@ -519,6 +565,8 @@ class _$DeleteStudent implements DeleteStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (deleteStudent != null) {
@@ -617,6 +665,8 @@ class _$EditStudent implements EditStudent {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return editStudent(model, index);
   }
@@ -630,6 +680,8 @@ class _$EditStudent implements EditStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return editStudent?.call(model, index);
   }
@@ -643,6 +695,8 @@ class _$EditStudent implements EditStudent {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (editStudent != null) {
@@ -660,6 +714,8 @@ class _$EditStudent implements EditStudent {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return editStudent(this);
   }
@@ -673,6 +729,8 @@ class _$EditStudent implements EditStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return editStudent?.call(this);
   }
@@ -686,6 +744,8 @@ class _$EditStudent implements EditStudent {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (editStudent != null) {
@@ -753,6 +813,8 @@ class _$Getallstudents implements Getallstudents {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return getallstudents();
   }
@@ -766,6 +828,8 @@ class _$Getallstudents implements Getallstudents {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return getallstudents?.call();
   }
@@ -779,6 +843,8 @@ class _$Getallstudents implements Getallstudents {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (getallstudents != null) {
@@ -796,6 +862,8 @@ class _$Getallstudents implements Getallstudents {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return getallstudents(this);
   }
@@ -809,6 +877,8 @@ class _$Getallstudents implements Getallstudents {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return getallstudents?.call(this);
   }
@@ -822,6 +892,8 @@ class _$Getallstudents implements Getallstudents {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (getallstudents != null) {
@@ -901,6 +973,8 @@ class _$GetImage implements GetImage {
     required TResult Function(StudentModel model, int index) editStudent,
     required TResult Function() getallstudents,
     required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
   }) {
     return getimage(image);
   }
@@ -914,6 +988,8 @@ class _$GetImage implements GetImage {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
   }) {
     return getimage?.call(image);
   }
@@ -927,6 +1003,8 @@ class _$GetImage implements GetImage {
     TResult Function(StudentModel model, int index)? editStudent,
     TResult Function()? getallstudents,
     TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
     required TResult orElse(),
   }) {
     if (getimage != null) {
@@ -944,6 +1022,8 @@ class _$GetImage implements GetImage {
     required TResult Function(EditStudent value) editStudent,
     required TResult Function(Getallstudents value) getallstudents,
     required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
   }) {
     return getimage(this);
   }
@@ -957,6 +1037,8 @@ class _$GetImage implements GetImage {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
   }) {
     return getimage?.call(this);
   }
@@ -970,6 +1052,8 @@ class _$GetImage implements GetImage {
     TResult Function(EditStudent value)? editStudent,
     TResult Function(Getallstudents value)? getallstudents,
     TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
     required TResult orElse(),
   }) {
     if (getimage != null) {
@@ -989,10 +1073,344 @@ abstract class GetImage implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetgenderCopyWith<$Res> {
+  factory _$$GetgenderCopyWith(
+          _$Getgender value, $Res Function(_$Getgender) then) =
+      __$$GetgenderCopyWithImpl<$Res>;
+  $Res call({dynamic gender});
+}
+
+/// @nodoc
+class __$$GetgenderCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements _$$GetgenderCopyWith<$Res> {
+  __$$GetgenderCopyWithImpl(
+      _$Getgender _value, $Res Function(_$Getgender) _then)
+      : super(_value, (v) => _then(v as _$Getgender));
+
+  @override
+  _$Getgender get _value => super._value as _$Getgender;
+
+  @override
+  $Res call({
+    Object? gender = freezed,
+  }) {
+    return _then(_$Getgender(
+      gender: gender == freezed ? _value.gender : gender,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Getgender implements Getgender {
+  const _$Getgender({this.gender});
+
+  @override
+  final dynamic gender;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getgender(gender: $gender)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Getgender &&
+            const DeepCollectionEquality().equals(other.gender, gender));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(gender));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GetgenderCopyWith<_$Getgender> get copyWith =>
+      __$$GetgenderCopyWithImpl<_$Getgender>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(StudentModel model) addStudent,
+    required TResult Function(int index) deleteStudent,
+    required TResult Function(StudentModel model, int index) editStudent,
+    required TResult Function() getallstudents,
+    required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
+  }) {
+    return getgender(gender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(StudentModel model)? addStudent,
+    TResult Function(int index)? deleteStudent,
+    TResult Function(StudentModel model, int index)? editStudent,
+    TResult Function()? getallstudents,
+    TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
+  }) {
+    return getgender?.call(gender);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(StudentModel model)? addStudent,
+    TResult Function(int index)? deleteStudent,
+    TResult Function(StudentModel model, int index)? editStudent,
+    TResult Function()? getallstudents,
+    TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
+    required TResult orElse(),
+  }) {
+    if (getgender != null) {
+      return getgender(gender);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(AddStudent value) addStudent,
+    required TResult Function(DeleteStudent value) deleteStudent,
+    required TResult Function(EditStudent value) editStudent,
+    required TResult Function(Getallstudents value) getallstudents,
+    required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
+  }) {
+    return getgender(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(AddStudent value)? addStudent,
+    TResult Function(DeleteStudent value)? deleteStudent,
+    TResult Function(EditStudent value)? editStudent,
+    TResult Function(Getallstudents value)? getallstudents,
+    TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
+  }) {
+    return getgender?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(AddStudent value)? addStudent,
+    TResult Function(DeleteStudent value)? deleteStudent,
+    TResult Function(EditStudent value)? editStudent,
+    TResult Function(Getallstudents value)? getallstudents,
+    TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
+    required TResult orElse(),
+  }) {
+    if (getgender != null) {
+      return getgender(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Getgender implements HomeEvent {
+  const factory Getgender({final dynamic gender}) = _$Getgender;
+
+  dynamic get gender => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$GetgenderCopyWith<_$Getgender> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetstandardCopyWith<$Res> {
+  factory _$$GetstandardCopyWith(
+          _$Getstandard value, $Res Function(_$Getstandard) then) =
+      __$$GetstandardCopyWithImpl<$Res>;
+  $Res call({dynamic standard});
+}
+
+/// @nodoc
+class __$$GetstandardCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements _$$GetstandardCopyWith<$Res> {
+  __$$GetstandardCopyWithImpl(
+      _$Getstandard _value, $Res Function(_$Getstandard) _then)
+      : super(_value, (v) => _then(v as _$Getstandard));
+
+  @override
+  _$Getstandard get _value => super._value as _$Getstandard;
+
+  @override
+  $Res call({
+    Object? standard = freezed,
+  }) {
+    return _then(_$Getstandard(
+      standard: standard == freezed ? _value.standard : standard,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Getstandard implements Getstandard {
+  const _$Getstandard({this.standard});
+
+  @override
+  final dynamic standard;
+
+  @override
+  String toString() {
+    return 'HomeEvent.getclass(standard: $standard)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Getstandard &&
+            const DeepCollectionEquality().equals(other.standard, standard));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(standard));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$GetstandardCopyWith<_$Getstandard> get copyWith =>
+      __$$GetstandardCopyWithImpl<_$Getstandard>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(StudentModel model) addStudent,
+    required TResult Function(int index) deleteStudent,
+    required TResult Function(StudentModel model, int index) editStudent,
+    required TResult Function() getallstudents,
+    required TResult Function(dynamic image) getimage,
+    required TResult Function(dynamic gender) getgender,
+    required TResult Function(dynamic standard) getclass,
+  }) {
+    return getclass(standard);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(StudentModel model)? addStudent,
+    TResult Function(int index)? deleteStudent,
+    TResult Function(StudentModel model, int index)? editStudent,
+    TResult Function()? getallstudents,
+    TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
+  }) {
+    return getclass?.call(standard);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(StudentModel model)? addStudent,
+    TResult Function(int index)? deleteStudent,
+    TResult Function(StudentModel model, int index)? editStudent,
+    TResult Function()? getallstudents,
+    TResult Function(dynamic image)? getimage,
+    TResult Function(dynamic gender)? getgender,
+    TResult Function(dynamic standard)? getclass,
+    required TResult orElse(),
+  }) {
+    if (getclass != null) {
+      return getclass(standard);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(AddStudent value) addStudent,
+    required TResult Function(DeleteStudent value) deleteStudent,
+    required TResult Function(EditStudent value) editStudent,
+    required TResult Function(Getallstudents value) getallstudents,
+    required TResult Function(GetImage value) getimage,
+    required TResult Function(Getgender value) getgender,
+    required TResult Function(Getstandard value) getclass,
+  }) {
+    return getclass(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(AddStudent value)? addStudent,
+    TResult Function(DeleteStudent value)? deleteStudent,
+    TResult Function(EditStudent value)? editStudent,
+    TResult Function(Getallstudents value)? getallstudents,
+    TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
+  }) {
+    return getclass?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(AddStudent value)? addStudent,
+    TResult Function(DeleteStudent value)? deleteStudent,
+    TResult Function(EditStudent value)? editStudent,
+    TResult Function(Getallstudents value)? getallstudents,
+    TResult Function(GetImage value)? getimage,
+    TResult Function(Getgender value)? getgender,
+    TResult Function(Getstandard value)? getclass,
+    required TResult orElse(),
+  }) {
+    if (getclass != null) {
+      return getclass(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Getstandard implements HomeEvent {
+  const factory Getstandard({final dynamic standard}) = _$Getstandard;
+
+  dynamic get standard => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$GetstandardCopyWith<_$Getstandard> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   List<StudentModel> get students => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   dynamic get image => throw _privateConstructorUsedError;
+  dynamic get gender => throw _privateConstructorUsedError;
+  dynamic get standard => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -1003,7 +1421,12 @@ mixin _$HomeState {
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res>;
-  $Res call({List<StudentModel> students, bool isError, dynamic image});
+  $Res call(
+      {List<StudentModel> students,
+      bool isError,
+      dynamic image,
+      dynamic gender,
+      dynamic standard});
 }
 
 /// @nodoc
@@ -1019,6 +1442,8 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
     Object? students = freezed,
     Object? isError = freezed,
     Object? image = freezed,
+    Object? gender = freezed,
+    Object? standard = freezed,
   }) {
     return _then(_value.copyWith(
       students: students == freezed
@@ -1033,6 +1458,14 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      standard: standard == freezed
+          ? _value.standard
+          : standard // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -1043,7 +1476,12 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
           _$_HomeState value, $Res Function(_$_HomeState) then) =
       __$$_HomeStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<StudentModel> students, bool isError, dynamic image});
+  $Res call(
+      {List<StudentModel> students,
+      bool isError,
+      dynamic image,
+      dynamic gender,
+      dynamic standard});
 }
 
 /// @nodoc
@@ -1061,6 +1499,8 @@ class __$$_HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     Object? students = freezed,
     Object? isError = freezed,
     Object? image = freezed,
+    Object? gender = freezed,
+    Object? standard = freezed,
   }) {
     return _then(_$_HomeState(
       students: students == freezed
@@ -1072,6 +1512,8 @@ class __$$_HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
       image: image == freezed ? _value.image : image,
+      gender: gender == freezed ? _value.gender : gender,
+      standard: standard == freezed ? _value.standard : standard,
     ));
   }
 }
@@ -1082,7 +1524,9 @@ class _$_HomeState implements _HomeState {
   const _$_HomeState(
       {required final List<StudentModel> students,
       required this.isError,
-      this.image})
+      this.image,
+      this.gender,
+      this.standard})
       : _students = students;
 
   final List<StudentModel> _students;
@@ -1096,10 +1540,14 @@ class _$_HomeState implements _HomeState {
   final bool isError;
   @override
   final dynamic image;
+  @override
+  final dynamic gender;
+  @override
+  final dynamic standard;
 
   @override
   String toString() {
-    return 'HomeState(students: $students, isError: $isError, image: $image)';
+    return 'HomeState(students: $students, isError: $isError, image: $image, gender: $gender, standard: $standard)';
   }
 
   @override
@@ -1109,7 +1557,9 @@ class _$_HomeState implements _HomeState {
             other is _$_HomeState &&
             const DeepCollectionEquality().equals(other._students, _students) &&
             const DeepCollectionEquality().equals(other.isError, isError) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality().equals(other.standard, standard));
   }
 
   @override
@@ -1117,7 +1567,9 @@ class _$_HomeState implements _HomeState {
       runtimeType,
       const DeepCollectionEquality().hash(_students),
       const DeepCollectionEquality().hash(isError),
-      const DeepCollectionEquality().hash(image));
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(standard));
 
   @JsonKey(ignore: true)
   @override
@@ -1129,7 +1581,9 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final List<StudentModel> students,
       required final bool isError,
-      final dynamic image}) = _$_HomeState;
+      final dynamic image,
+      final dynamic gender,
+      final dynamic standard}) = _$_HomeState;
 
   @override
   List<StudentModel> get students => throw _privateConstructorUsedError;
@@ -1137,6 +1591,10 @@ abstract class _HomeState implements HomeState {
   bool get isError => throw _privateConstructorUsedError;
   @override
   dynamic get image => throw _privateConstructorUsedError;
+  @override
+  dynamic get gender => throw _privateConstructorUsedError;
+  @override
+  dynamic get standard => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>

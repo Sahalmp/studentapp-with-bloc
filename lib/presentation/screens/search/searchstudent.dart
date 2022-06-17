@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:studentapp/domain/constants/constants.dart';
 import 'package:studentapp/presentation/widgets/navigation.dart';
 
 import '../../../application/bloc/home_bloc.dart';
@@ -81,7 +82,7 @@ class Mysearch extends SearchDelegate {
   getimage(data) {
     if (data.image == null) {
       return const CircleAvatar(
-        backgroundImage: AssetImage('assets/images/avatar.png'),
+        backgroundImage: AssetImage(avatarimage),
       );
     } else {
       return CircleAvatar(

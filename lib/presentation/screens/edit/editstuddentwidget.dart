@@ -16,127 +16,223 @@ class EditStudentWidget extends StatelessWidget {
   EditStudentWidget({Key? key, required this.data, required this.index})
       : super(key: key);
   final TextEditingController _agecontroller = TextEditingController();
-  final TextEditingController _gendercontroller = TextEditingController();
   final TextEditingController _namecontroller = TextEditingController();
-  final TextEditingController _standardcontroller = TextEditingController();
   var pathimage;
   ImagePicker imagePicker = ImagePicker();
+  String? gender;
+  String? _dropDownValue;
+  List<String> dropdownlist = [
+    'PRE-KG',
+    'LKG',
+    'UKG',
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+    'XI',
+    'XII'
+  ];
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     _agecontroller.text = data.age;
-    _gendercontroller.text = data.gender;
     _namecontroller.text = data.name;
-    _standardcontroller.text = data.standard;
     var _image;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: const Text('Students'),
         actions: [
           ElevatedButton.icon(
             onPressed: () {
               onsavebuttonclicked(context, index);
-              Navigator.of(context).pop();
             },
             icon: const Icon(Icons.save),
             label: const Text('Save'),
           )
         ],
       ),
-      body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: const Color.fromARGB(255, 197, 250, 225),
-            ),
-            child: Padding(
+      body: ListView(
+        children: [
+          Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const HeadTitle(
-                    title: "Edit Student",
-                  ),
-                  height20,
-                  Stack(
-                    alignment: Alignment.center,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: const Color.fromARGB(255, 197, 250, 225),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      const SizedBox(
-                        height: 110,
-                        width: 130,
+                      const HeadTitle(
+                        title: "Edit Student",
                       ),
-                      BlocBuilder<HomeBloc, HomeState>(
-                        builder: (context, state) {
-                          return data.image == null && state.image == null
-                              ? Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(avatarimage),
-                                        fit: BoxFit.cover),
-                                    shape: BoxShape.circle,
-                                  ))
-                              : Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: FileImage(
-                                            File(state.image ?? data.image)),
-                                        fit: BoxFit.cover),
-                                    shape: BoxShape.circle,
-                                  ));
-                        },
-                      ),
-                      Positioned(
-                        bottom: 4,
-                        right: -7,
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await showChoiceDialog(context);
-                          },
-                          style: ButtonStyle(
-                            shape:
-                                MaterialStateProperty.all(const CircleBorder()),
+                      height20,
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 110,
+                            width: 130,
                           ),
-                          child: const Icon(Icons.photo_camera),
-                        ),
+                          BlocBuilder<HomeBloc, HomeState>(
+                            builder: (context, state) {
+                              return state.image != null || data.image != null
+                                  ? Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: FileImage(File(
+                                                state.image ?? data.image)),
+                                            fit: BoxFit.cover),
+                                        shape: BoxShape.circle,
+                                      ))
+                                  : Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(avatarimage),
+                                            fit: BoxFit.cover),
+                                        shape: BoxShape.circle,
+                                      ));
+                            },
+                          ),
+                          Positioned(
+                            bottom: 4,
+                            right: -7,
+                            child: ElevatedButton(
+                              onPressed: () async {
+                                await showChoiceDialog(context);
+                              },
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    const CircleBorder()),
+                              ),
+                              child: const Icon(Icons.photo_camera),
+                            ),
+                          ),
+                        ],
+                      ),
+                      height20,
+                      TextFieldWidget(
+                        label: 'Name',
+                        type: TextInputType.name,
+                        getcontrol: _namecontroller,
+                        expr: '[a-zA-Z ]',
+                      ),
+                      height20,
+                      Row(
+                        children: const [
+                          Text("Gender :", style: TextStyle(fontSize: 16)),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          radiobuttonwidget("Male", context),
+                          radiobuttonwidget("Female", context),
+                          radiobuttonwidget("Other", context),
+                        ],
+                      ),
+                      height20,
+                      TextFieldWidget(
+                        label: 'Age',
+                        type: TextInputType.number,
+                        getcontrol: _agecontroller,
+                        expr: '[0-9]',
+                        maxlength: 2,
+                      ),
+                      height20,
+                      Row(
+                        children: [
+                          const Text(
+                            'Class   :',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: BlocBuilder<HomeBloc, HomeState>(
+                              builder: (context, state) {
+                                return DropdownButton(
+                                  hint: state.standard == null
+                                      ? Text(
+                                          data.standard == 'LKG' ||
+                                                  data.standard == 'UKG' ||
+                                                  data.standard == 'PRE-KG'
+                                              ? data.standard
+                                              : "${data.standard} standard",
+                                        )
+                                      : Text(
+                                          state.standard == 'LKG' ||
+                                                  state.standard == 'UKG' ||
+                                                  state.standard == 'PRE-KG'
+                                              ? state.standard
+                                              : "${state.standard} standard",
+                                        ),
+                                  menuMaxHeight: 200,
+                                  // isExpanded: true,
+                                  iconSize: 30.0,
+                                  items: dropdownlist.map(
+                                    (val) {
+                                      return DropdownMenuItem<String>(
+                                        value: val,
+                                        child: Text(val),
+                                      );
+                                    },
+                                  ).toList(),
+                                  onChanged: (val) {
+                                    _dropDownValue = val.toString();
+                                    BlocProvider.of<HomeBloc>(context).add(
+                                      Getstandard(standard: _dropDownValue),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  height20,
-                  TextFieldWidget(
-                    label: 'Name',
-                    type: TextInputType.name,
-                    getcontrol: _namecontroller,
-                  ),
-                  height20,
-                  TextFieldWidget(
-                    label: 'Age',
-                    type: TextInputType.number,
-                    getcontrol: _agecontroller,
-                  ),
-                  height20,
-                  TextFieldWidget(
-                    label: 'Gender',
-                    type: TextInputType.name,
-                    getcontrol: _gendercontroller,
-                  ),
-                  height20,
-                  TextFieldWidget(
-                    label: 'Class',
-                    type: TextInputType.name,
-                    getcontrol: _standardcontroller,
-                  ),
-                  height20,
-                ],
-              ),
-            ),
-          )),
+                ),
+              )),
+        ],
+      ),
+    );
+  }
+
+  BlocBuilder<HomeBloc, HomeState> radiobuttonwidget(
+      String valuename, context) {
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        return Row(children: [
+          Radio(
+              value: valuename,
+              groupValue: state.gender ?? data.gender,
+              onChanged: (value) {
+                BlocProvider.of<HomeBloc>(context).add(
+                  Getgender(gender: value),
+                );
+                gender = valuename;
+              }),
+          Text(valuename),
+        ]);
+      },
     );
   }
 
@@ -144,12 +240,19 @@ class EditStudentWidget extends StatelessWidget {
     final _name = _namecontroller.text.trim();
     final _age = _agecontroller.text.trim();
 
-    final _gender = _gendercontroller.text.trim();
-    final _standard = _standardcontroller.text.trim();
+    final _gender = gender ?? data.gender;
+    final _standard = _dropDownValue ?? data.standard;
 
-    if (_name.isEmpty || _age.isEmpty || _gender.isEmpty || _standard.isEmpty) {
+    if (_name.isEmpty || _age.isEmpty || _gender == null || _standard == null) {
       return ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Fill up all blanks'),
+        duration: Duration(milliseconds: 700),
+        backgroundColor: Colors.red,
+      ));
+    } else if (_name.length < 4) {
+      return ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('Error'),
+        duration: Duration(milliseconds: 700),
         backgroundColor: Colors.red,
       ));
     }
@@ -158,12 +261,13 @@ class EditStudentWidget extends StatelessWidget {
         name: _name,
         age: _age,
         key: DateTime.now().microsecond,
-        image: pathimage,
+        image: pathimage ?? data.image,
         gender: _gender,
         standard: _standard);
 
     BlocProvider.of<HomeBloc>(context)
         .add(EditStudent(model: _student, index: index));
+    Navigator.of(context).pop();
 
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text('Student Updated'),

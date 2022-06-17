@@ -16,35 +16,37 @@ class ListStudentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        return ListView.separated(
-          itemBuilder: (ctx, index) {
-            final data = state.students[index];
-            return ListTile(
-                onTap: () {
-                  nextpage(
-                      context: context,
-                      screen: ViewStudentWidget(index: index));
+        return state.students.isEmpty
+            ? const Center(child: Text('No Students found'))
+            : ListView.separated(
+                itemBuilder: (ctx, index) {
+                  final data = state.students[index];
+                  return ListTile(
+                      onTap: () {
+                        nextpage(
+                            context: context,
+                            screen: ViewStudentWidget(index: index));
+                      },
+                      title: Text(data.name),
+                      subtitle: Text("Gender : ${data.gender}"),
+                      trailing: IconButton(
+                        onPressed: () {
+                          deletedialogbox(context: context, index: index);
+                        },
+                        icon: const Icon(Icons.delete),
+                      ),
+                      leading: data.image == null
+                          ? const CircleAvatar(
+                              backgroundImage: AssetImage(avatarimage),
+                            )
+                          : CircleAvatar(
+                              backgroundImage: FileImage(
+                              File(data.image),
+                            )));
                 },
-                title: Text(data.name),
-                subtitle: Text("Gender : ${data.gender}"),
-                trailing: IconButton(
-                  onPressed: () {
-                    deletedialogbox(context: context, index: index);
-                  },
-                  icon: const Icon(Icons.delete),
-                ),
-                leading: data.image == null
-                    ? const CircleAvatar(
-                        backgroundImage: AssetImage(avatarimage),
-                      )
-                    : CircleAvatar(
-                        backgroundImage: FileImage(
-                        File(data.image),
-                      )));
-          },
-          separatorBuilder: ((ctx, index) => const Divider()),
-          itemCount: state.students.length,
-        );
+                separatorBuilder: ((ctx, index) => const Divider()),
+                itemCount: state.students.length,
+              );
       },
     );
   }

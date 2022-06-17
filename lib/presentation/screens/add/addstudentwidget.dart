@@ -13,16 +13,35 @@ import '../../widgets/textfieldwidget.dart';
 class AddStudentWidget extends StatelessWidget {
   AddStudentWidget({Key? key}) : super(key: key);
   final TextEditingController _agecontroller = TextEditingController();
-  final TextEditingController _gendercontroller = TextEditingController();
   final TextEditingController _namecontroller = TextEditingController();
   final TextEditingController _standardcontroller = TextEditingController();
   ImagePicker imagePicker = ImagePicker();
 
   var pathimage;
+  String? gender;
+  String? _dropDownValue;
+  List<String> dropdownlist = [
+    'PRE-KG',
+    'LKG',
+    'UKG',
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+    'XI',
+    'XII'
+  ];
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<HomeBloc>(context).add(HomeEvent.getimage(image: null));
+    BlocProvider.of<HomeBloc>(context)
+        .add(const HomeEvent.getimage(image: null));
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
@@ -104,29 +123,80 @@ class AddStudentWidget extends StatelessWidget {
                       ),
                       height20,
                       TextFieldWidget(
+                        expr: '[a-zA-Z ]',
                         label: 'Name',
                         type: TextInputType.name,
                         getcontrol: _namecontroller,
                       ),
                       height20,
-                      TextFieldWidget(
+                      Row(
+                        children: const [
+                          Text("Gender :", style: TextStyle(fontSize: 16)),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          radiobuttonwidget("Male", context),
+                          radiobuttonwidget("Female", context),
+                          radiobuttonwidget("Other", context),
+                        ],
+                      ),
+                      height20,
+                      TextFieldWidget(Validatio
                         label: 'Age',
                         type: TextInputType.number,
                         getcontrol: _agecontroller,
+                        maxlength: 2,
                       ),
                       height20,
-                      TextFieldWidget(
-                        label: 'Gender',
-                        type: TextInputType.name,
-                        getcontrol: _gendercontroller,
+                      Row(
+                        children: [
+                          const Text(
+                            'Class   :',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: BlocBuilder<HomeBloc, HomeState>(
+                              builder: (context, state) {
+                                return DropdownButton(
+                                  hint: state.standard == null
+                                      ? const Text('Select ')
+                                      : Text(
+                                          state.standard == 'LKG' ||
+                                                  state.standard == 'UKG' ||
+                                                  state.standard == 'PRE-KG'
+                                              ? state.standard
+                                              : "${state.standard} standard",
+                                        ),
+                                  menuMaxHeight: 200,
+
+                                  // isExpanded: true,
+                                  iconSize: 30.0,
+                                  items: dropdownlist.map(
+                                    (val) {
+                                      return DropdownMenuItem<String>(
+                                        value: val,
+                                        child: Text(val),
+                                      );
+                                    },
+                                  ).toList(),
+                                  onChanged: (val) {
+                                    _dropDownValue = val.toString();
+                                    BlocProvider.of<HomeBloc>(context).add(
+                                      Getstandard(standard: _dropDownValue),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      height20,
-                      TextFieldWidget(
-                        label: 'Class',
-                        type: TextInputType.name,
-                        getcontrol: _standardcontroller,
-                      ),
-                      height20,
                     ],
                   ),
                 ),
@@ -138,19 +208,45 @@ class AddStudentWidget extends StatelessWidget {
     );
   }
 
+  BlocBuilder<HomeBloc, HomeState> radiobuttonwidget(
+      String valuename, context) {
+    return BlocBuilder<HomeBloc, HomeState>(
+      builder: (context, state) {
+        return Row(children: [
+          Radio(
+              value: valuename,
+              groupValue: state.gender,
+              onChanged: (value) {
+                BlocProvider.of<HomeBloc>(context).add(
+                  Getgender(gender: value),
+                );
+                gender = valuename;
+              }),
+          Text(valuename),
+        ]);
+      },
+    );
+  }
+
   onsavebuttonclicked(
     BuildContext context,
   ) async {
     final _name = _namecontroller.text.trim();
     final _age = _agecontroller.text.trim();
 
-    final _gender = _gendercontroller.text.trim();
-    final _standard = _standardcontroller.text.trim();
+    final _gender = gender;
+    final _standard = _dropDownValue;
 
-    if (_name.isEmpty || _age.isEmpty || _gender.isEmpty || _standard.isEmpty) {
+    if (_name.isEmpty || _age.isEmpty || _gender == null || _standard == null) {
       return ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Fill up all blanks'),
-        duration: Duration(milliseconds: 500),
+        duration: Duration(milliseconds: 700),
+        backgroundColor: Colors.red,
+      ));
+    } else if (_name.length < 4) {
+      return ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('Error'),
+        duration: Duration(milliseconds: 700),
         backgroundColor: Colors.red,
       ));
     }
@@ -172,7 +268,6 @@ class AddStudentWidget extends StatelessWidget {
       content: Text('Student Added'),
     ));
   }
-  
 
   Future<void> showChoiceDialog(BuildContext context) {
     var _image;

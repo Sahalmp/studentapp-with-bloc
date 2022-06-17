@@ -24,7 +24,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<AddStudent>(
-      (event, emit) async {
+      (event, emit) async { 
         await _homeServices.addStudent(model: event.model);
         add(const Getallstudents());
       },
@@ -32,6 +32,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<GetImage>((event, emit) {
       print('get image called');
       emit(state.copyWith(image: event.image));
+    });
+    on<Getgender>((event, emit) {
+      print('get image called');
+      emit(state.copyWith(gender: event.gender));
+    });
+    on<Getstandard>((event, emit) {
+      print('get image called');
+      emit(state.copyWith(standard: event.standard));
     });
     on<DeleteStudent>((event, emit) async {
       await _homeServices.deleteStudent(index: event.index);
@@ -41,5 +49,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       await _homeServices.editStudent(model: event.model, index: event.index);
       add(const Getallstudents());
     });
+  
   }
 }
+
