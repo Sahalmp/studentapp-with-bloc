@@ -143,7 +143,8 @@ class AddStudentWidget extends StatelessWidget {
                         ],
                       ),
                       height20,
-                      TextFieldWidget(Validatio
+                      TextFieldWidget(
+                        expr: '[0-9]',
                         label: 'Age',
                         type: TextInputType.number,
                         getcontrol: _agecontroller,
